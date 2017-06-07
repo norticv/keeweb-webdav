@@ -1,0 +1,20 @@
+{
+    "name": "nortic/keeweb-webdav",
+    "type": "project",
+    "description": "BruteForceProtection library for PHP",
+    "keywords": ["BruteForceProtection"],
+    "license" : "GPL-3.0",
+    "authors": [
+        {
+            "name": "Anthony PAUSE",
+            "email": "citronbleuv@gmail.com",
+            "role" : "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+	"nortic/brute-force-protection": "master",
+	"nortic/sabre-dav-extension": "master",
+	"sabre/dav": "~2.0.5"
+    }
+}

@@ -1,0 +1,13 @@
+<?php
+return array(
+    'base-uri' => '%%WEBDAV_BASEURI%%',
+    'auth' => array(
+        'username' => '%%WEBDAV_USERNAME%%',
+        'password' => '%%WEBDAV_PASSWORD%%'
+    ),
+    'brute-force-protection' => array( 
+        'limit-login-attempts' => array(
+            'max-retry' => '%%BRUTEFORCE_PROTECTION_MAXRETRY%%' 
+        )
+    )
+);

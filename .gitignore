@@ -1,0 +1,12 @@
+# ViM
+*.swp
+
+# Composer
+composer.lock
+vendor
+
+# Assuming every .php file in the root is for testing
+/*.php
+
+# Mac
+.DS_Store
