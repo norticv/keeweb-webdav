@@ -1,6 +1,8 @@
 keeweb-webdav
 ==============
 
+WARNING / IN DEVELOPMENT !!! NO STABLE VERSION
+
 # Installation with Docker compose :
 
 ``` 
