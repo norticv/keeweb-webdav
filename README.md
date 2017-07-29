@@ -1,62 +1,66 @@
 keeweb-webdav
 ==============
 
-WARNING / IN DEVELOPMENT !!! NO STABLE VERSION
+This program is a manager password can be use in local and online.
 
-# Installation with Docker compose :
+Technicaly, it's a combinaison of keeweb program to manage your passwords and Webdav (sabre/dav) to storage the password file.
+Learn the keeweb documentation for more explication.
 
-``` 
-version: '2'
-services:
-    webdav:
-        build: .
-        restart: always
-        ports:
-        - 80
-        environment:
-        - WEBDAV_USERNAME=admin
-        - WEBDAV_PASSWORD=admin
-        - WEBDAV_BASEURI=/webdav
-        - BRUTEFORCE_PROTECTION_MAXRETRY=20
-        volumes:
-        - webdav_files:/var/www/files
-        - webdav_www:/var/www
-        networks:
-            proxyweb:
-                ipv4_address: 172.240.1.14
-    web:
-        image: viossat/keeweb
-        ports:
-        - 81:80
-        volumes:
-        - web_www:/var/www/html
-        - web_log:/var/log/lighttpd
-volumes:
-    webdav_files:
-        driver: local
-    webdav_www:
-        driver: local
-    web_www:
-        driver: local
-    web_log:
-        driver: local
+## Features :
+
+### Security / Brute force protection
+
+Enabled by default, This protection block global web access an user try to connect at you 
+
+## Quick start :
+
+### Requirements :
+
+1. [Docker](https://www.docker.com/community-edition#/download) version **1.12.0+**
+2. [Docker Compose](https://docs.docker.com/compose/install/) version **1.9.0+**
+
+### Install last release 
+
+Get the last stable release
+
+```bash
+$ wget https://github.com/norticv/keeweb-webdav/archive/v1.0.0-alpha.zip keeweb-webdav.zip && unzip keeweb-webdav.zip 
 ```
 
-# How to use !
+Install and run the program
 
-Connect you to : http://localhost:81
-And upload your kdbx files
+```bash
+$ ./install
+```
+Now you can open your web browser and go to http://localhost:8080 
+Use the login "admin" and password "admin" to connect you. 
 
-Go to http://localhost:80 to use Keeweb browser client.
-Join your Webdav file.
+Is highly recommended to change the password.
 
-Warning, is recommanded to use a reverse proxy with TLS if you want protected a public access !
+Warning, is recommended to use a reverse proxy with TLS if you want protected a public access !
 
-# Code license
+## Configuration :
 
-You are free to use the code in this repository under the terms of the 0-clause BSD license. LICENSE contains a copy of this license.
+WEBDAV_USERNAME : default admin, is webdav username using to authentication
 
-# Forked
+WEBDAV_PASSWORD : default admin, is webdav password using to authentication
 
-Original maintainer Stephen Ausman <sausman@stackd.com>
-Forked from https://github.com/stackd/docker-sabre-dav
+BRUTEFORCE_PROTECTION_MAXRETRY : default 10, block the access at the password page after 10 authentication try. 
+
+## FAQ
+
+### How to use !
+
+Connect you to : http://localhost:8080
+
+### Where is the password storage file ?
+
+You can find the keepass file in files/general.kdbx
+
+### I want use my keepass file 
+
+You can replace your file in files/general.kdbx and it's ok
+
+### Where can I change the default keeweb configuration ?
+
+You can modify the file files/keeweb.config.json
