@@ -1,0 +1,18 @@
+{
+    "settings": {
+        "theme": "fb", 
+        "locale": "fr",
+        "autoUpdate": "install",
+        "autoSave": true,
+        "idleMinutes": 15,
+        "skipHttpsWarning": true,
+
+        "webdav": true,
+        "webdavSaveMethod": "move"
+    },
+    "files": [{
+        "storage": "webdav",
+        "name": "Général",
+        "path": "/files/general.kdbx"
+    }]
+}

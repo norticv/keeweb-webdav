@@ -11,10 +11,10 @@
             "role" : "Developer"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.0",
-	"nortic/brute-force-protection": "master",
-	"nortic/sabre-dav-extension": "master",
-	"sabre/dav": "~2.0.5"
+        "nortic/brute-force-protection": "~v1.0.0",
+        "sabre/dav": "~3.2.2"
     }
 }

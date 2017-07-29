@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [[ ${1} == 'protection' ]]; then
+    if [[ ${2} == 'reset-limit-login-attempts' ]]; then
+    fi
+fi

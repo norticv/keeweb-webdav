@@ -1,5 +1,8 @@
 # App
 files
+data
+config
+keeweb.html
 
 # ViM
 *.swp

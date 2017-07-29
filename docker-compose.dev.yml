@@ -1,0 +1,15 @@
+version: '2'
+services:
+    webdav:
+        build: 
+            context: .
+            dockerfile: docker/dev/Dockerfile
+        ports:
+        - 8080:80
+        environment:
+        - WEBDAV_USERNAME=admin
+        - WEBDAV_PASSWORD=admin
+        - BRUTEFORCE_PROTECTION_MAXRETRY=10
+        volumes:
+        - ./files:/app/files/files
+        - ./app:/app
