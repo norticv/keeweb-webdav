@@ -12,9 +12,12 @@
         }
     ],
     "minimum-stability": "dev",
+    "repositories": [
+        { "type": "git", "url": "https://github.com/citronbleuv/sabre-dav" }
+    ],
     "require": {
         "php": ">=5.5.0",
         "nortic/brute-force-protection": "~v1.0.0",
-        "sabre/dav": "~3.2.2"
+        "sabre/dav": "dev-patch-1"
     }
 }

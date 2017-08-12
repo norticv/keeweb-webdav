@@ -1,4 +1,25 @@
 #!/bin/bash
-docker-compose stop 
-docker-compose rm 
-docker-compose --file=docker-compose.dev.yml up -d --build
+
+if [ ! -z "$1" ] && [ $1 == 'dev' ]; then
+
+    if [ ! -f docker-compose-dev.yml ]; then
+        echo 'You must copy and configure the file docker-compose-dev.yml.dist to docker-compose-dev.yml'
+        exit 1
+    fi
+
+    docker-compose --file=docker-compose-dev.yml stop 
+    docker-compose --file=docker-compose-dev.yml rm 
+    docker-compose --file=docker-compose-dev.yml up -d --build
+
+else
+
+    if [ ! -f docker-compose.yml ]; then
+        echo 'You must copy and configure the file docker-compose.yml.dist to docker-compose.yml'
+        exit 1
+    fi
+
+    docker-compose stop 
+    docker-compose rm 
+    docker-compose up -d --build
+fi
+

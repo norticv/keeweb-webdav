@@ -53,7 +53,7 @@ $authBackend = new BruteForceProtection\SabreDavBackend\BasicCallBack($bruteForc
 // Keeweb
 $server->on('method:GET', function(RequestInterface $request, ResponseInterface $response) use ($rootPath) {
 
-    if ( ! $request->getPath()) {
+    if ( ! $request->getPath() && ! $request->getRawServerValue('QUERY_STRING')) {
         include $rootPath .'/keeweb.html';
         exit;
     }

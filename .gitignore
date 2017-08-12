@@ -1,5 +1,7 @@
 # App
-files
+/files
+/docker-compose-dev.yml
+/docker-compose.yml
 
 # ViM
 *.swp
