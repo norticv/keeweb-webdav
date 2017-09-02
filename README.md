@@ -25,7 +25,7 @@ This program is a complete solution to storage and to manage your passwords in l
 Get the last stable release
 
 ```bash
-$ wget https://github.com/norticv/keeweb-webdav/archive/v1.0.0-beta.zip keeweb-webdav.zip && unzip keeweb-webdav.zip 
+$ wget https://github.com/norticv/keeweb-webdav/archive/v1.0.1-beta.zip keeweb-webdav.zip && unzip keeweb-webdav.zip 
 ```
 
 Install and run the program
