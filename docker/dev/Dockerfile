@@ -17,25 +17,27 @@ RUN set -x \
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=bin --filename=composer
 
-COPY docker/prod/prepare /prepare
-COPY docker/prod/template /template
-COPY docker/prod/vendor /vendor
-
-RUN chmod +x /prepare/* 
-
+# Locale
 RUN locale-gen en_US.UTF-8
+
+# Env
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-
 ENV WEBDAV_USERNAME=admin
 ENV WEBDAV_PASSWORD=admin
 ENV WEBDAV_BASEURI=/
 ENV UID=1000
 ENV GID=1000
 ENV BRUTEFORCE_PROTECTION_MAXRETRY=10
-
 ENV DEV_COMPOSER=true
+
+# Prepare
+COPY docker/prod/prepare /prepare
+COPY docker/prod/template /template
+COPY docker/prod/vendor /vendor
+
+RUN chmod +x /prepare/* 
 
 EXPOSE 80
 
