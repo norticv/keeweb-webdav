@@ -22,7 +22,8 @@ echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # Configure Keeweb
 echo "- Configure Keeweb"
-sed -i "s/(no-config)/${WEBDAV_BASEURI//\//\\/}files\/keeweb\.config\.json/" /keeweb.html
+cp /vendor/keeweb-v1.5.5/index.html /app/keeweb.html
+sed -i "s/(no-config)/${WEBDAV_BASEURI//\//\\/}files\/keeweb\.config\.json/" /app/keeweb.html
 
 # Configure App
 echo "- Configure App"
@@ -34,8 +35,6 @@ mkdir -p config
 if [[ ! -f /app/files/files/keeweb.config.json ]]; then
     cp /app/default-files/* /app/files/files/
 fi
-
-cp /keeweb.html /app
 
 chmod a+rwx /app/data
 chmod a+rwx /app/files

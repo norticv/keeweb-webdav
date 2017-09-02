@@ -17,11 +17,9 @@ RUN set -x \
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=bin --filename=composer
 
-# Get keeweb
-ADD https://raw.githubusercontent.com/keeweb/keeweb/gh-pages/index.html /keeweb.html
-
 COPY docker/prod/prepare /prepare
 COPY docker/prod/template /template
+COPY docker/prod/vendor /vendor
 
 RUN chmod +x /prepare/* 
 

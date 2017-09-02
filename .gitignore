@@ -8,7 +8,7 @@
 
 # Composer
 composer.lock
-vendor
+app/vendor
 
 # Assuming every .php file in the root is for testing
 /*.php

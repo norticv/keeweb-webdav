@@ -1,0 +1,10 @@
+CACHE MANIFEST
+
+# 2017-08-30:v1.5.5
+# updmin:v1.0.1
+
+CACHE:
+index.html
+
+NETWORK:
+*
