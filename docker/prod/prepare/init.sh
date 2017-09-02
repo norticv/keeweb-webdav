@@ -35,7 +35,7 @@ if [[ ! -f /app/files/files/keeweb.config.json ]]; then
     cp /app/default-files/* /app/files/files/
 fi
 
-mv /keeweb.html /app
+cp /keeweb.html /app
 
 chmod a+rwx /app/data
 chmod a+rwx /app/files
