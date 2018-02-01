@@ -21,16 +21,16 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=bin --file
 RUN locale-gen en_US.UTF-8
 
 # Env
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
-ENV WEBDAV_USERNAME=admin
-ENV WEBDAV_PASSWORD=admin
-ENV WEBDAV_BASEURI=/
-ENV UID=1000
-ENV GID=1000
-ENV BRUTEFORCE_PROTECTION_MAXRETRY=10
-ENV DEV_COMPOSER=false
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8 \
+    WEBDAV_USERNAME=admin \
+    WEBDAV_PASSWORD=admin \
+    WEBDAV_BASEURI=/ \
+    UID=1000 \
+    GID=1000 \
+    BRUTEFORCE_PROTECTION_MAXRETRY=10 \
+    DEV_COMPOSER=false
 
 # Prepare
 COPY docker/prod/prepare /prepare

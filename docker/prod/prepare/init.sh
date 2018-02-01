@@ -57,7 +57,7 @@ chown -R www-data:www-data /var/www
 
 echo "- Install vendors"
 
-if [[ $DEV_COMPOSER ]]; then
+if [ "$DEV_COMPOSER" = true ]; then
     gosu www-data composer update --prefer-source
 else
     gosu www-data composer update
